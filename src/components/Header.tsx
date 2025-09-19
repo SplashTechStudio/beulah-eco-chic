@@ -1,11 +1,15 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, Phone, Mail } from "lucide-react";
+import { Menu, X, Phone, Mail, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { useCart } from "@/contexts/CartContext";
+import Cart from "@/components/Cart";
 import logo from "@/assets/logo.jpeg";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { itemCount, toggleCart } = useCart();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border shadow-soft">
@@ -48,6 +52,23 @@ const Header = () => {
             <Link to="/about" className="font-medium hover:text-primary transition-colors">
               About & Contact
             </Link>
+            
+            {/* Cart Button */}
+            <Button 
+              variant="ghost" 
+              size="sm"
+              onClick={toggleCart}
+              className="relative hover:bg-muted p-3"
+            >
+              <ShoppingCart className="h-5 w-5" />
+              {itemCount > 0 && (
+                <Badge 
+                  className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 bg-primary text-primary-foreground text-xs"
+                >
+                  {itemCount}
+                </Badge>
+              )}
+            </Button>
           </nav>
 
           <div className="hidden md:block">
@@ -56,15 +77,33 @@ const Header = () => {
             </Button>
           </div>
 
-          {/* Mobile menu button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </Button>
+          {/* Mobile menu button & cart */}
+          <div className="md:hidden flex items-center gap-2">
+            {/* Mobile Cart Button */}
+            <Button 
+              variant="ghost" 
+              size="sm"
+              onClick={toggleCart}
+              className="relative hover:bg-muted p-3"
+            >
+              <ShoppingCart className="h-5 w-5" />
+              {itemCount > 0 && (
+                <Badge 
+                  className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 bg-primary text-primary-foreground text-xs"
+                >
+                  {itemCount}
+                </Badge>
+              )}
+            </Button>
+            
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </Button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -99,6 +138,9 @@ const Header = () => {
           </div>
         )}
       </div>
+      
+      {/* Cart Component */}
+      <Cart />
     </header>
   );
 };

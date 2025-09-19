@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { ShoppingCart, Star, Filter } from "lucide-react";
+import { ShoppingCart, Star, Filter, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "sonner";
+import { useCart } from "@/contexts/CartContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -25,6 +26,7 @@ import bambooPanels from "@/assets/products/bamboo-panels.jpg";
 const Shop = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [sortBy, setSortBy] = useState("name");
+  const { addToCart } = useCart();
 
   const products = [
     {
@@ -166,6 +168,17 @@ const Shop = () => {
       }
     });
 
+  const handleAddToCart = (product: typeof products[0]) => {
+    const cartItem = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      category: product.category,
+    };
+    addToCart(cartItem);
+  };
+
   const handlePurchase = (product: typeof products[0]) => {
     // Initialize Paystack payment
     // @ts-ignore
@@ -274,14 +287,26 @@ const Shop = () => {
                     </span>
                   </div>
                   
-                  <Button 
-                    onClick={() => handlePurchase(product)}
-                    className="w-full btn-gradient"
-                    disabled={!product.inStock}
-                  >
-                    <ShoppingCart className="mr-2 h-4 w-4" />
-                    Buy Now
-                  </Button>
+                  <div className="flex gap-2">
+                    <Button 
+                      onClick={() => handleAddToCart(product)}
+                      className="flex-1"
+                      variant="outline"
+                      disabled={!product.inStock}
+                    >
+                      <Plus className="mr-2 h-4 w-4" />
+                      Add to Cart
+                    </Button>
+                    
+                    <Button 
+                      onClick={() => handlePurchase(product)}
+                      className="flex-1 btn-gradient"
+                      disabled={!product.inStock}
+                    >
+                      <ShoppingCart className="mr-2 h-4 w-4" />
+                      Buy Now
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             ))}
