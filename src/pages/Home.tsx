@@ -135,9 +135,9 @@ const Home = () => {
       <Header />
       
       {/* Hero Section with Carousel */}
-      <section className="relative h-screen overflow-hidden">
-        <Carousel setApi={setApi} className="h-full">
-          <CarouselContent className="h-full -ml-0">
+      <section className="relative min-h-screen h-[100vh] overflow-hidden">
+        <Carousel setApi={setApi} className="h-screen">
+          <CarouselContent className="h-screen -ml-0">
             {heroSlides.map((slide, index) => (
               <CarouselItem key={index} className="h-full pl-0 basis-full">
                 <div className="relative h-full">
@@ -171,7 +171,7 @@ const Home = () => {
                               Explore Products <ArrowRight className="ml-3 h-5 w-5" />
                             </Link>
                           </Button>
-                          <Button asChild variant="outline" size="lg" className="glass-card text-white border-white/40 hover:bg-white/10 text-lg px-10 py-7">
+                          <Button asChild variant="outline" size="lg" className="glass-card text-white bg-white/30 border-white/40 hover:bg-white/10 text-lg px-10 py-7">
                             <Link to="/about">Learn More</Link>
                           </Button>
                         </div>
@@ -190,7 +190,7 @@ const Home = () => {
             <button
               key={index}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                current === index ? 'bg-primary scale-125' : 'bg-white/50 hover:bg-white/70'
+                current === index ? 'bg-primary ' : 'bg-white/50 hover:bg-white/70'
               }`}
               onClick={() => api?.scrollTo(index)}
             />

@@ -50,7 +50,7 @@ const Header = () => {
               Shop
             </Link>
             <Link to="/about" className="font-medium hover:text-primary transition-colors">
-              About & Contact
+              About
             </Link>
             
             {/* Cart Button */}
@@ -129,7 +129,7 @@ const Header = () => {
                 className="font-medium hover:text-primary transition-colors py-2"
                 onClick={() => setIsOpen(false)}
               >
-                About & Contact
+                About
               </Link>
               <Button asChild variant="default" className="btn-gradient mt-4">
                 <Link to="/shop" onClick={() => setIsOpen(false)}>Shop Now</Link>
