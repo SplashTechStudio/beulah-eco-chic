@@ -75,21 +75,32 @@ const Home = () => {
 
   const featuredProducts = [
     {
-      name: "Smart Toilet System",
+      name: "100L Smart Toilet",
       image: smartToilet,
-      price: "₦450,000",
+      price: "₦600,000",
       category: "Bathroom"
     },
     {
-      name: "Premium Shower System",
+      name: "150L Shower System",
       image: showerSystem,
-      price: "₦320,000",
+      price: "₦700,000",
+      category: "Bathroom"
+    }, {
+      name: "200L Shower System",
+      image: showerSystem,
+      price: "₦830,000",
       category: "Bathroom"
     },
     {
-      name: "Solar Water Heater",
+      name: "300L Shower System",
       image: solarHeater,
-      price: "₦280,000",
+      price: "₦1,000,000",
+      category: "Sustainable Energy"
+    },
+      {
+      name: "14k/SQM Solar Water Heater",
+      image: solarHeater,
+      price: "₦850,000",
       category: "Sustainable Energy"
     },
     {
