@@ -91,7 +91,7 @@ const Cart = () => {
     // Initialize Paystack payment
     // @ts-ignore
     const handler = window.PaystackPop.setup({
-      key: 'pk_test_371f62c844238132677c6f291d6414193ff14b06',
+      key: 'pk_test_df9d3975724b8a8d98f2fda63541d0d739abad7c',
       email: 'customer@example.com', // In real app, get from user input
       amount: totalAmount,
       currency: 'NGN',

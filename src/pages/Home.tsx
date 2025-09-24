@@ -10,12 +10,12 @@ import { type CarouselApi } from "@/components/ui/carousel";
 import { useState } from "react";
 
 // Import product images
-import smartToilet from "@/assets/products/smart-toilet.jpg";
-import showerSystem from "@/assets/products/shower-system.jpg";
+import bike from "@/assets/products/bike.jpeg";
+import showerSystem from "@/assets/products/heater.png";
 import solarHeater from "@/assets/products/solar-heater.jpg";
 import bathroomBasin from "@/assets/products/bathroom-basin.jpg";
 import spcFlooring from "@/assets/products/spc-flooring.jpg";
-import electricBike from "@/assets/products/electric-bike.jpg";
+import wpcflooring from "@/assets/products/wpc-1.jpg";
 
 // Import hero background images
 import showerScene from "@/assets/hero/shower-scene.jpg";
@@ -75,31 +75,31 @@ const Home = () => {
 
   const featuredProducts = [
     {
-      name: "100L Smart Toilet",
-      image: smartToilet,
+      name: "100L Water Heater",
+      image: showerSystem,
       price: "₦600,000",
       category: "Bathroom"
     },
     {
-      name: "150L Shower System",
-      image: showerSystem,
+      name: "150L Water Heater",
+      image: solarHeater,
       price: "₦700,000",
       category: "Bathroom"
     }, {
-      name: "200L Shower System",
-      image: showerSystem,
+      name: "200L Water Heater",
+      image: solarHeater,
       price: "₦830,000",
       category: "Bathroom"
     },
     {
-      name: "300L Shower System",
+      name: "300L Water Heater",
       image: solarHeater,
       price: "₦1,000,000",
       category: "Sustainable Energy"
     },
       {
-      name: "14k/SQM Solar Water Heater",
-      image: solarHeater,
+      name: "14k/SQM WPC",
+      image: wpcflooring,
       price: "₦850,000",
       category: "Sustainable Energy"
     },
@@ -117,8 +117,8 @@ const Home = () => {
     },
     {
       name: "Electric Cargo Bike",
-      image: electricBike,
-      price: "₦650,000",
+      image: bike,
+      price: "₦4,000,000",
       category: "Sustainable Transport"
     }
   ];

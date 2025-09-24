@@ -12,16 +12,21 @@ import Footer from "@/components/Footer";
 // Import all product images
 import smartToilet from "@/assets/products/smart-toilet.jpg";
 import showerSystem from "@/assets/products/shower-system.jpg";
-import solarHeater from "@/assets/products/solar-heater.jpg";
-import bathroomBasin from "@/assets/products/bathroom-basin.jpg";
-import spcFlooring from "@/assets/products/spc-flooring.jpg";
-import electricBike from "@/assets/products/electric-bike.jpg";
+import solarHeatr from "@/assets/products/solar-heater.jpg";
+// import bathroomBasin from "@/assets/products/bathroom-basin.jpg";
+// import spcFlooring from "@/assets/products/spc-flooring.jpg";
+// import electricBike from "@/assets/products/electric-bike.jpg";
 import wpcFlooring from "@/assets/products/wpc-flooring.jpg";
 import waterFilter from "@/assets/products/water-filter.jpg";
 import ledMirror from "@/assets/products/led-mirror.jpg";
 import smartThermostat from "@/assets/products/smart-thermostat.jpg";
 import kitchenFaucet from "@/assets/products/kitchen-faucet.jpg";
-import bambooPanels from "@/assets/products/bamboo-panels.jpg";
+// import bambooPanels from "@/assets/products/bamboo-panels.jpg";
+import electricBike from "@/assets/products/bike.jpeg";
+import solarHeater from "@/assets/products/heater.png";
+import bathroomBasin from "@/assets/products/bathroom-basin.jpg";
+import spcFlooring from "@/assets/products/spc-flooring.jpg";
+import bambooPanels from "@/assets/products/wpc-1.jpg";
 
 const Shop = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -29,36 +34,66 @@ const Shop = () => {
   const { addToCart } = useCart();
 
   const products = [
-    {
-      id: 1,
-      name: "Smart Toilet with LED Lighting",
-      price: 450000,
-      image: smartToilet,
-      category: "Bathroom",
-      rating: 4.9,
-      description: "Ultra-modern smart toilet with LED lighting, automatic flushing, and bidet function",
-      inStock: true
-    },
-    {
-      id: 2,
-      name: "Premium Rainfall Shower System",
-      price: 320000,
-      image: showerSystem,
-      category: "Bathroom",
-      rating: 4.8,
-      description: "Digital control panel shower system with rainfall and massage functions",
-      inStock: true
-    },
+    // {
+    //   id: 1,
+    //   name: "Smart Toilet with LED Lighting",
+    //   price: 450000,
+    //   image: smartToilet,
+    //   category: "Bathroom",
+    //   rating: 4.9,
+    //   description: "Ultra-modern smart toilet with LED lighting, automatic flushing, and bidet function",
+    //   inStock: true
+    // },
+    // {
+    //   id: 2,
+    //   name: "Premium Rainfall Shower System",
+    //   price: 320000,
+    //   image: showerSystem,
+    //   category: "Bathroom",
+    //   rating: 4.8,
+    //   description: "Digital control panel shower system with rainfall and massage functions",
+    //   inStock: true
+    // },
     {
       id: 3,
-      name: "Solar Water Heater 200L",
-      price: 280000,
+      name: "Solar Water Heater 100L",
+      price: 600000,
       image: solarHeater,
       category: "Sustainable Energy",
       rating: 4.7,
       description: "Eco-friendly solar water heating system with evacuated tube technology",
       inStock: true
     },
+    {
+      id: 3,
+      name: "Solar Water Heater 150L",
+      price: 700000,
+      image: solarHeater,
+      category: "Sustainable Energy",
+      rating: 4.7,
+      description: "Eco-friendly solar water heating system with evacuated tube technology",
+      inStock: true
+    },{
+      id: 3,
+      name: "Solar Water Heater 200L",
+      price: 830000,
+      image: solarHeater,
+      category: "Sustainable Energy",
+      rating: 4.7,
+      description: "Eco-friendly solar water heating system with evacuated tube technology",
+      inStock: true
+    },
+    {
+      id: 3,
+      name: "Solar Water Heater 300L",
+      price: 1000000,
+      image: solarHeater,
+      category: "Sustainable Energy",
+      rating: 4.7,
+      description: "Eco-friendly solar water heating system with evacuated tube technology",
+      inStock: true
+    },
+    
     {
       id: 4,
       name: "Luxury Bathroom Basin Set",
@@ -67,7 +102,7 @@ const Shop = () => {
       category: "Bathroom",
       rating: 4.6,
       description: "Premium ceramic basin with modern faucet and marble countertop",
-      inStock: true
+      inStock: false
     },
     {
       id: 5,
@@ -77,28 +112,19 @@ const Shop = () => {
       category: "Flooring",
       rating: 4.8,
       description: "Waterproof SPC flooring with authentic wood texture and lifetime warranty",
-      inStock: true
+      inStock: false
     },
     {
       id: 6,
-      name: "Electric Cargo Bike",
-      price: 650000,
+      name: "Cargo Bike",
+      price: 4000000,
       image: electricBike,
       category: "Sustainable Transport",
       rating: 4.5,
       description: "High-capacity electric bike perfect for deliveries and urban transport",
       inStock: true
     },
-    {
-      id: 7,
-      name: "WPC Composite Decking (per sqm)",
-      price: 45000,
-      image: wpcFlooring,
-      category: "Flooring",
-      rating: 4.7,
-      description: "Weather-resistant composite decking with natural wood appearance",
-      inStock: true
-    },
+    
     {
       id: 8,
       name: "Smart Water Filtration System",
@@ -107,7 +133,7 @@ const Shop = () => {
       category: "Sustainable Equipment",
       rating: 4.9,
       description: "Advanced filtration with UV sterilization and smart monitoring",
-      inStock: true
+      inStock: false
     },
     {
       id: 9,
@@ -117,7 +143,7 @@ const Shop = () => {
       category: "Bathroom",
       rating: 4.6,
       description: "Backlit LED mirror with anti-fog technology and touch controls",
-      inStock: true
+      inStock: false
     },
     {
       id: 10,
@@ -127,7 +153,7 @@ const Shop = () => {
       category: "Sustainable Equipment",
       rating: 4.8,
       description: "Energy-efficient smart thermostat with app control and scheduling",
-      inStock: true
+      inStock: false
     },
     {
       id: 11,
@@ -137,17 +163,17 @@ const Shop = () => {
       category: "Kitchen",
       rating: 4.7,
       description: "Pull-out spray faucet with stainless steel finish and water-saving technology",
-      inStock: true
+      inStock: false
     },
     {
       id: 12,
-      name: "Eco-Friendly Bamboo Wall Panels (per sqm)",
+      name: "wpc (per sqm)",
       price: 25000,
       image: bambooPanels,
       category: "Sustainable Materials",
       rating: 4.5,
       description: "Sustainable bamboo panels for modern interior wall applications",
-      inStock: true
+      inStock: false
     }
   ];
 
@@ -183,7 +209,7 @@ const Shop = () => {
     // Initialize Paystack payment
     // @ts-ignore
     const handler = window.PaystackPop.setup({
-      key: 'pk_test_371f62c844238132677c6f291d6414193ff14b06',
+      key: 'pk_test_df9d3975724b8a8d98f2fda63541d0d739abad7c',
       email: 'customer@example.com', // In real app, get from user input
       amount: product.price * 100, // Paystack expects amount in kobo
       currency: 'NGN',
@@ -268,6 +294,11 @@ const Shop = () => {
                   {product.inStock && (
                     <Badge className="absolute top-4 right-4 bg-success text-success-foreground">
                       In Stock
+                    </Badge>
+                  )}
+                  {!product.inStock && (
+                    <Badge className="absolute top-4 right-4 bg-red-500 text-success-foreground">
+                      out of Stock
                     </Badge>
                   )}
                 </div>
