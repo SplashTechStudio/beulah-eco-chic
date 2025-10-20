@@ -13,15 +13,11 @@ import Footer from "@/components/Footer";
 import smartToilet from "@/assets/products/smart-toilet.jpg";
 import showerSystem from "@/assets/products/shower-system.jpg";
 import solarHeatr from "@/assets/products/solar-heater.jpg";
-// import bathroomBasin from "@/assets/products/bathroom-basin.jpg";
-// import spcFlooring from "@/assets/products/spc-flooring.jpg";
-// import electricBike from "@/assets/products/electric-bike.jpg";
 import wpcFlooring from "@/assets/products/wpc-flooring.jpg";
 import waterFilter from "@/assets/products/water-filter.jpg";
 import ledMirror from "@/assets/products/led-mirror.jpg";
 import smartThermostat from "@/assets/products/smart-thermostat.jpg";
 import kitchenFaucet from "@/assets/products/kitchen-faucet.jpg";
-// import bambooPanels from "@/assets/products/bamboo-panels.jpg";
 import electricBike from "@/assets/products/bike.jpeg";
 import solarHeater from "@/assets/products/heater.png";
 import bathroomBasin from "@/assets/products/bathroom-basin.jpg";
@@ -96,23 +92,34 @@ const Shop = () => {
     
     {
       id: 4,
-      name: "Luxury Bathroom Basin Set",
-      price: 180000,
+      name: "Luxury Pedestal Basin",
+      price: 950000,
       image: bathroomBasin,
       category: "Bathroom",
       rating: 4.6,
       description: "Premium ceramic basin with modern faucet and marble countertop",
-      inStock: false
+      inStock: true
+    },
+
+    {
+      id: 432,
+      name: "Luxury Pedestal Basin",
+      price: 950000,
+      image: bathroomBasin,
+      category: "Bathroom",
+      rating: 4.6,
+      description: "Premium ceramic basin with modern faucet and marble countertop",
+      inStock: true
     },
     {
       id: 5,
       name: "SPC Premium Flooring (per sqm)",
-      price: 35000,
+      price: 14000,
       image: spcFlooring,
       category: "Flooring",
       rating: 4.8,
       description: "Waterproof SPC flooring with authentic wood texture and lifetime warranty",
-      inStock: false
+      inStock: true
     },
     {
       id: 6,
@@ -133,7 +140,7 @@ const Shop = () => {
       category: "Sustainable Equipment",
       rating: 4.9,
       description: "Advanced filtration with UV sterilization and smart monitoring",
-      inStock: false
+      inStock: true
     },
     {
       id: 9,
@@ -143,7 +150,7 @@ const Shop = () => {
       category: "Bathroom",
       rating: 4.6,
       description: "Backlit LED mirror with anti-fog technology and touch controls",
-      inStock: false
+      inStock: true
     },
     {
       id: 10,
@@ -153,7 +160,7 @@ const Shop = () => {
       category: "Sustainable Equipment",
       rating: 4.8,
       description: "Energy-efficient smart thermostat with app control and scheduling",
-      inStock: false
+      inStock: true
     },
     {
       id: 11,
@@ -163,17 +170,17 @@ const Shop = () => {
       category: "Kitchen",
       rating: 4.7,
       description: "Pull-out spray faucet with stainless steel finish and water-saving technology",
-      inStock: false
+      inStock: true
     },
     {
       id: 12,
       name: "wpc (per sqm)",
-      price: 25000,
+      price: 18000,
       image: bambooPanels,
       category: "Sustainable Materials",
       rating: 4.5,
       description: "Sustainable bamboo panels for modern interior wall applications",
-      inStock: false
+      inStock: true
     }
   ];
 
